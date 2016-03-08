@@ -1,0 +1,40 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [
+            "error"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "spaced-comment": [2, "always"],
+        "arrow-parens": [2, "always"],
+        "prefer-arrow-callback":  1,
+        "prefer-spread": 2,
+        "prefer-template":2,
+        "prefer-rest-params":2,
+        "no-octal":2,
+        "no-multi-str":2,
+        "prefer-const": 1,
+        "no-var": 1,
+        "no-const-assign": 2,
+        "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
+        "arrow-spacing" : [2, {
+            "before": true,
+            "after": true
+            }]
+        }
+}
