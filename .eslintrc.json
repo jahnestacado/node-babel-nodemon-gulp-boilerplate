@@ -20,6 +20,7 @@
             "error",
             "always"
         ],
+        "no-unused-vars": [1],
         "spaced-comment": [2, "always"],
         "arrow-parens": [2, "always"],
         "prefer-arrow-callback":  1,
@@ -27,6 +28,7 @@
         "prefer-template":2,
         "prefer-rest-params":2,
         "no-octal":2,
+        "no-console":1,
         "no-multi-str":2,
         "prefer-const": 1,
         "no-var": 1,
