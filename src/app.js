@@ -1,4 +1,5 @@
-const module1 = require("./example/module1.js");
+// Do some changes and save ...
+require("./example/module1.js");
 
-const message = "hello there!";
-console.log(`App says ${message}`);
+const message = "hello there";
+console.log(`************ App says ${message}!!!\n`);

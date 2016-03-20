@@ -1,15 +1,16 @@
-const gulp = require("gulp");
-const plumber = require("gulp-plumber");
-const babel = require("gulp-babel");
-const cache = require("gulp-cached");
-const eslint = require("gulp-eslint");
-const nodemon = require("gulp-nodemon");
+var gulp = require("gulp");
+var plumber = require("gulp-plumber");
+var babel = require("gulp-babel");
+var cache = require("gulp-cached");
+var eslint = require("gulp-eslint");
+var nodemon = require("gulp-nodemon");
+var path = require("path");
 
-const SOURCES = ["src/*.js", "src/**/*.js"];
-const DEST_DIR = "src-gen";
-const MAIN = `${DEST_DIR}/app.js`;
+var SOURCES = ["src/*.js", "src/**/*.js"];
+var DEST_DIR = "src-gen";
+var MAIN = path.join(DEST_DIR, "app.js");
 
-gulp.task("babelify", () => {
+gulp.task("babelify", function(){
     gulp.src(SOURCES)
     // Use plumber to handle errors without terminating the pipe-chain
     .pipe(plumber())
@@ -21,23 +22,23 @@ gulp.task("babelify", () => {
     .pipe(gulp.dest(DEST_DIR));
 });
 
-gulp.task("lint", () => {
+gulp.task("lint", function(){
     return gulp.src(SOURCES)
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 });
 
-gulp.task("watch", () => {
+gulp.task("watch", function(){
     gulp.watch(SOURCES, ["babelify"]);
 });
 
-gulp.task("nodemon", () => {
+gulp.task("nodemon", function(){
     nodemon({
         script: MAIN,
-        args:process.argv.splice(3, process.argv.length)
+        args: process.argv.splice(3, process.argv.length)
     });
 });
 
 gulp.task("default", ["babelify", "lint"]);
-gulp.task("dev-start", ["babelify", "lint", "watch", "nodemon"]);
+gulp.task("dev", ["babelify", "lint", "watch", "nodemon"]);

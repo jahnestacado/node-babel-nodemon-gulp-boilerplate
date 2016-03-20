@@ -28,7 +28,7 @@
         "prefer-template":2,
         "prefer-rest-params":2,
         "no-octal":2,
-        "no-console":1,
+        "no-console":0,
         "no-multi-str":2,
         "prefer-const": 1,
         "no-var": 1,

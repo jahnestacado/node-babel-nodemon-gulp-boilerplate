@@ -1,2 +1,3 @@
-const message = "hello!";
-console.log(`Module1 says ${message}`);
+// Do some changes and save ...
+const message = "hello";
+console.log(`############ Module1 says ${message}!!!\n`);
