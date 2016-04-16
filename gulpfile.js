@@ -6,7 +6,7 @@ var eslint = require("gulp-eslint");
 var nodemon = require("gulp-nodemon");
 var path = require("path");
 
-var SOURCES = ["src/*.js", "src/**/*.js"];
+var SOURCES = ["src/*.js", "src/*/*.js"];
 var DEST_DIR = "src-gen";
 var MAIN = path.join(DEST_DIR, "app.js");
 
@@ -23,7 +23,7 @@ gulp.task("babelify", function(){
 });
 
 gulp.task("lint", function(){
-    return gulp.src(SOURCES)
+    gulp.src(SOURCES)
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
