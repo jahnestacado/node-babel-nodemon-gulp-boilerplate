@@ -6,7 +6,7 @@ var eslint = require("gulp-eslint");
 var nodemon = require("gulp-nodemon");
 var path = require("path");
 
-var SOURCES = ["src/*.js", "src/*/*.js"];
+var SOURCES = ["src/**/*.js"];
 var DEST_DIR = "src-gen";
 var MAIN = path.join(DEST_DIR, "app.js");
 
